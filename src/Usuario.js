@@ -1,18 +1,17 @@
+import UsuarioDados from "./UsuarioDados";
+import { useState } from "react";
+
 export default function Usuario() {
   // implementar lógica de alteração dos dados do usuário
+  const [userName, setUserName] = useState("Catana");
+  const [userImg, setUserImg] = useState("assets/img/catanacomics.svg");
 
   return (
-    <>
-      <div class="usuario">
-        <img src="assets/img/catanacomics.svg" />
-        <div class="texto">
-          <strong>catanacomics</strong>
-          <span>
-            Catana
-            <ion-icon name="pencil"></ion-icon>
-          </span>
-        </div>
-      </div>
-    </>
+    <UsuarioDados
+      userName={userName}
+      setUserName={setUserName}
+      userImg={userImg}
+      setUserImg={setUserImg}
+    />
   );
 }
