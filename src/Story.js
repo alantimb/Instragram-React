@@ -1,13 +1,13 @@
-export default function Story() {
+export default function Story(props) {
   // implementar lógica dos stories mapeados do array
 
   return (
     <>
       <div class="story">
         <div class="imagem">
-          <img src="assets/img/9gag.svg" />
+          <img src={props.storyImg} />
         </div>
-        <div class="usuario">9gag</div>
+        <div class="usuario">{props.storyName}</div>
       </div>
     </>
   );
