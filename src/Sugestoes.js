@@ -14,14 +14,14 @@ export default function Sugestoes() {
 
   return (
     <>
-      <div class="sugestoes">
-        <div class="titulo">
+      <div className="sugestoes">
+        <div className="titulo">
           Sugestões para você
           <div>Ver tudo</div>
         </div>
 
-        {sugestElements.map((item) => (
-          <Sugestao sugImg={item.sugImg} sugName={item.sugName} />
+        {sugestElements.map((item, index) => (
+          <Sugestao key={index} sugImg={item.sugImg} sugName={item.sugName} />
         ))}
       </div>
     </>

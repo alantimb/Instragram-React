@@ -3,11 +3,11 @@ export default function Story(props) {
 
   return (
     <>
-      <div class="story">
-        <div class="imagem">
+      <div className="story">
+        <div className="imagem">
           <img src={props.storyImg} />
         </div>
-        <div class="usuario">{props.storyName}</div>
+        <div className="usuario">{props.storyName}</div>
       </div>
     </>
   );

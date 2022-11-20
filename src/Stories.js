@@ -17,12 +17,16 @@ export default function Stories() {
 
   return (
     <>
-      <div class="stories">
-        {storyElements.map((item) => (
-          <Story storyImg={item.storyImg} storyName={item.storyName} />
+      <div className="stories">
+        {storyElements.map((item, index) => (
+          <Story
+            key={index}
+            storyImg={item.storyImg}
+            storyName={item.storyName}
+          />
         ))}
 
-        <div class="setinha">
+        <div className="setinha">
           <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
       </div>

@@ -208,6 +208,10 @@ body {
   margin-right: 10px;
 }
 
+.red {
+  color: red;
+}
+
 .post:last-child {
   margin-bottom: 18px;
 }

@@ -22,9 +22,10 @@ export default function Posts() {
 
   return (
     <>
-      <div class="posts">
-        {postsElements.map((item) => (
+      <div data-test="post" className="posts">
+        {postsElements.map((item, index) => (
           <Post
+            key={index}
             userImg={item.userImg}
             userName={item.userName}
             postImg={item.postImg}

@@ -1,8 +1,9 @@
 export default function UsuarioDados(props) {
   return (
     <>
-      <div class="usuario">
+      <div data-test="user" className="usuario">
         <img
+          data-test="profile-image"
           src={props.userImg}
           onClick={() =>
             props.setUserImg(
@@ -10,11 +11,12 @@ export default function UsuarioDados(props) {
             )
           }
         />
-        <div class="texto">
+        <div className="texto">
           <strong>catanacomics</strong>
-          <span>
+          <span data-test="name">
             {props.userName}
             <ion-icon
+              data-test="edit-name"
               name="pencil"
               onClick={() =>
                 props.setUserName(
