@@ -1,4 +1,5 @@
 import Post from "./Post";
+import { useState } from "react";
 
 export default function Posts() {
   const postsElements = [
@@ -20,6 +21,10 @@ export default function Posts() {
     },
   ];
 
+  const [heartColor, setHeartColor] = useState("");
+  const [heartName, setHeartName] = useState("heart-outline");
+  const [bookmarkName, setBookmarkName] = useState("bookmark-outline");
+
   return (
     <>
       <div data-test="post" className="posts">
@@ -32,6 +37,12 @@ export default function Posts() {
             likesImg={item.likesImg}
             likesName={item.likesName}
             likesNumb={item.likesNumb}
+            heartColor={heartColor}
+            setHeartColor={setHeartColor}
+            heartName={heartName}
+            setHeartName={setHeartName}
+            bookmarkName={bookmarkName}
+            setBookmarkName={setBookmarkName}
           />
         ))}
       </div>
