@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 export default function Post(props) {
+  const bookmarkInitial = "bookmark-outline";
+
+  const [heartColor, setHeartColor] = useState("");
+  const [heartName, setHeartName] = useState("heart-outline");
+  const [bookmarkName, setBookmarkName] = useState(bookmarkInitial);
+
   return (
     <>
       <div className="post">
@@ -18,14 +26,14 @@ export default function Post(props) {
             src={props.postImg}
             onClick={() => {
               {
-                props.heartColor !== "red"
-                  ? props.setHeartColor("red")
-                  : props.setHeartColor("red");
+                heartColor !== "red"
+                  ? setHeartColor("red")
+                  : setHeartColor("red");
               }
               {
-                props.heartColor !== "red"
-                  ? props.setHeartName("heart")
-                  : props.setHeartName("heart");
+                heartColor !== "red"
+                  ? setHeartName("heart")
+                  : setHeartName("heart");
               }
             }}
           />
@@ -36,18 +44,18 @@ export default function Post(props) {
             <div>
               <ion-icon
                 data-test="like-post"
-                class={props.heartColor}
-                name={props.heartName}
+                class={heartColor}
+                name={heartName}
                 onClick={() => {
                   {
-                    props.heartColor === "red"
-                      ? props.setHeartColor("")
-                      : props.setHeartColor("red");
+                    heartColor === "red"
+                      ? setHeartColor("")
+                      : setHeartColor("red");
                   }
                   {
-                    props.heartColor === "red"
-                      ? props.setHeartName("heart-outline")
-                      : props.setHeartName("heart");
+                    heartColor === "red"
+                      ? setHeartName("heart-outline")
+                      : setHeartName("heart");
                   }
                 }}
               ></ion-icon>
@@ -57,11 +65,11 @@ export default function Post(props) {
             <div>
               <ion-icon
                 data-test="save-post"
-                name={props.bookmarkName}
+                name={bookmarkName}
                 onClick={() => {
-                  props.bookmarkName === "bookmark-outline"
-                    ? props.setBookmarkName("bookmark")
-                    : props.setBookmarkName("bookmark-outline");
+                  bookmarkName === "bookmark-outline"
+                    ? setBookmarkName("bookmark")
+                    : setBookmarkName("bookmark-outline");
                 }}
               ></ion-icon>
             </div>
@@ -73,7 +81,7 @@ export default function Post(props) {
               Curtido por <strong>{props.likesName}</strong> e{" "}
               <strong>
                 outras{" "}
-                {props.heartColor === "red"
+                {heartColor === "red"
                   ? (Number(props.likesNumb) + 0.001).toFixed(3)
                   : props.likesNumb}{" "}
                 pessoas
