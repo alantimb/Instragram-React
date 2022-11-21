@@ -24,7 +24,7 @@ export default function Post(props) {
           <img
             data-test="post-image"
             src={props.postImg}
-            onClick={() => {
+            onDoubleClick={() => {
               {
                 heartColor !== "red"
                   ? setHeartColor("red")

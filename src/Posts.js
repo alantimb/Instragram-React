@@ -19,6 +19,14 @@ export default function Posts() {
       likesName: `adorable_animals`,
       likesNumb: `99.159`,
     },
+    {
+      userImg: `assets/img/barked.svg`,
+      userName: `barked`,
+      postImg: `assets/img/dog.svg`,
+      likesImg: `assets/img/adorable_animals.svg`,
+      likesName: `adorable_animals`,
+      likesNumb: `99.159`,
+    },
   ];
 
   return (
